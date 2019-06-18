@@ -10,11 +10,9 @@
     "mariadb": {
       "install": {
         "version": "10.1"
-      }
-    },
-    "yum": {
-      "epel": {
-        "enabled": false
+      },
+      "apt_repository": {
+        "base_url": "ftp.osuosl.org/pub/mariadb/repo"
       }
     }
   },
