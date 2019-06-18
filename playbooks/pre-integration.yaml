@@ -1,0 +1,14 @@
+- hosts: all
+  roles:
+    - bindep
+  vars:
+    bindep_file: /home/zuul/src/opendev.org/openstack/openstack-chef/bindep.txt
+
+- hosts: all
+  tasks:
+  - name: Install chef package
+    shell: curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 14
+    become: yes
+  - name: Install berkshelf
+    shell: /opt/chef/embedded/bin/gem install --no-rdoc --no-ri berkshelf
+    become: yes
