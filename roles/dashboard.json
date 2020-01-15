@@ -1,0 +1,9 @@
+{
+  "name": "dashboard",
+  "description": "Deploy dashboard services",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstack-dashboard::horizon]",
+    "recipe[openstack-dashboard::neutron-lbaas-dashboard]"
+  ]
+}

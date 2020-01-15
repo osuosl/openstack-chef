@@ -1,0 +1,22 @@
+{
+  "name": "dashboard_test",
+  "description": "Dashboard cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": false,
+            "heat": false,
+            "horizon": true,
+            "nova": false
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

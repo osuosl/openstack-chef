@@ -1,0 +1,8 @@
+{
+  "name": "openstackclient",
+  "description": "Deploy openstackclient cookbook",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstackclient]"
+  ]
+}

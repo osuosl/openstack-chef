@@ -29,15 +29,6 @@
           }
         }
       },
-      "integration-test": {
-        "conf": {
-          "service_available": {
-            "ceilometer": false,
-            "heat": false,
-            "horizon": false
-          }
-        }
-      },
       "dashboard": {
         "server_hostname": "localhost"
       },
