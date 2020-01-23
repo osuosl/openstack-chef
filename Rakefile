@@ -142,6 +142,7 @@ end
 
 desc 'Integration test on Infra'
 task integration: %i(create_key berks_vendor) do
+  _run_env_queries
   log_dir = ENV['WORKSPACE'] + '/logs'
   # Translates project name into shorter names with underscores
   project_name = ENV['PROJECT_NAME'].gsub('cookbook-openstack-', '').tr('-', '_')
@@ -158,7 +159,6 @@ task integration: %i(create_key berks_vendor) do
   sh %(mkdir #{log_dir})
   # This is a workaround for allowing chef-client to run in local mode
   sh %(sudo mkdir -p /etc/chef && sudo cp .chef/encrypted_data_bag_secret /etc/chef/openstack_data_bag_secret)
-  _run_env_queries
 
   # Three passes to ensure idempotency. prefer each to times, even if it
   # reads weird
