@@ -153,6 +153,8 @@ task integration: %i(create_key berks_vendor) do
       'minimal'
     when 'cookbook_openstackclient'
       'openstackclient'
+    else
+      project_name
     end
   inspec_dir = 'test/integration/' + project_name.tr('_', '-') + '/inspec'
   run_list = "role[#{project_name}],role[#{project_name}_test]"
